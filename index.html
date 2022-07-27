@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .modal-header{
+            background-color: coral;
+            color: whitesmoke;
+        }
+        h5{
+            text-align: center;
+            color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5" >
+        <h5>Login To Watch My Video</h5>
+        <button type="button" class="btn btn-outline-primary popup" data-bs-toggle="modal" data-bs-target="#mymodal">Login</button>
+        <a class="btn btn-primary " role="button" href="JS-Task.html" target="_blank">Register</a>
+            <div class="modal" id="mymodal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Hello</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form>
+                                <label for="fname">Full Name</label><br>
+                                <input class="form-control width:50" type="text"><br>
+                                <label for="Email">Email</label><br>
+                                <input class="form-control width:50" type="Email" id="Email"><br>
+                                <label for="phone">Password</label><br>
+                                <input class="form-control width:50" type="password" id="Pass"><br>
+                            </form>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-primary" onclick="readVal()">Login</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script>
+        function readVal(){
+            var Email;
+            Email=localStorage.getItem("Email");
+            console.log(Email);
+
+            var Pass;
+            Pass=localStorage.getItem("password");
+            console.log(Pass);
+
+            var userEmail=document.getElementById("Email").value;
+            var userPass=document.getElementById("Pass").value;
+            console.log(userEmail);
+            console.log(userPass);
+            if(Email===userEmail && Pass===userPass)
+            {
+                /*location.replace("https://www.youtube.com/watch?v=s-bZD3O3P80&list=RDAMVM-aQMjByEeo8")*/Email
+                window.location.assign("https://www.youtube.com/watch?v=3MC4BXm2cJw");
+            }
+            else{
+                alert("Email or Password does not match");
+            }
+        }
+    </script>
+</body>
+</html>
